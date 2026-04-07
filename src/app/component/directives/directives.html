@@ -1,0 +1,32 @@
+<p>directives works!</p>
+<h1 *ngIf="isLogin()">Welcome User</h1>
+
+<div>
+    <ul *ngFor="let user of users()">
+        <li>{{user}}</li>
+
+    </ul>
+</div>
+<p [ngStyle]="{color:pColor()}">This is a paragraph with dynamic color.</p>
+<ul>
+    <li ngFor="let student for studentData()">
+        {{student.name}},{{student.age}}
+
+    </li>
+</ul>
+
+
+<button (click)="changeColor('red')">Red</button>
+<button (click)="changeColor('green')">Green</button>
+<button (click)="changeColor('yellow')">Yellow</button>
+<button (click)="changeColor('blue')">Blue</button>
+<button (click)="changeColor('pink')">Pink</button>
+
+<div [ngSwitch]="color">
+  <h1 *ngSwitchCase="'red'" style="background-color: red;">Red Color</h1>
+  <h1 *ngSwitchCase="'green'" style="background-color: green;">Green Color</h1>
+  <h1 *ngSwitchCase="'yellow'" style="background-color: yellow;">Yellow Color</h1>
+  <h1 *ngSwitchCase="'blue'" style="background-color: blue;">Blue Color</h1>
+  <h1 *ngSwitchCase="'pink'" style="background-color: pink;">Pink Color</h1>
+  <h1 *ngSwitchDefault>No Color Match</h1>
+</div>

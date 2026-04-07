@@ -1,0 +1,37 @@
+<p>data-binding works!</p>
+<button (click)="Change_course_name()">SHOw alert</button>
+<table style="width :100%;">
+    <tr>
+        <td>
+            <span>{{courseName}}</span>
+
+        </td>
+        <td>
+            <input type="text" value="{{rollNo}}">
+        </td>
+        <td>
+            {{currentDate}}
+        </td>
+    </tr>
+
+{{isActive}}
+    <tr>
+        <td>
+             {{rollNo}}
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="rollNo">
+            
+
+        </td>
+    </tr>
+</table>
+<br>
+<hr>
+<table>
+    <tr>
+        <td>
+            <button (click)="showAlert()">Show ALerts</button>
+        </td>
+    </tr>
+</table>

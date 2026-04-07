@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-3">
+        <select class="form-select" [(ngModel)]="selectedCaste">
+            <option value="ABC Cast">ABC Cast</option>
+            <option value="DDD Cast">DDD Cast</option>
+            <option value="ccc Cast">ccc Cast</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    
+    <div class="col-3">
+        @if (selectedCaste === 'Other') {
+            <input type="text" class="form-control" placeholder="Please specify other value">
+            
+        } @else if (selectedCaste === 'ABC Cast') {
+            <span class="text-primary">You selected the primary option.</span>
+            
+        } @else if (selectedCaste === 'DDD Cast') {
+            <span class="text-secondary">You selected the secondary option.</span>}
+          @else if (selectedCaste === 'ccc Cast') {
+            <span class="text-secondary">You selected the third option.</span>}        
+          @else {
+            <span class="text-muted">Please select a valid option from the list.</span>
+        }
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-3">
+        <select class="form-select" [(ngModel)]="selectedCaste">
+            <option value="ABC-Cast">ABC Cast</option>
+            <option value="DDD-Cast">DDD Cast</option>
+            <option value="ccc-Cast">ccc Cast</option>
+            <option value="Other_">Other</option>
+        </select>
+    </div>
+    
+    <div class="col-3">
+        @switch (selectedCaste) {
+            @case ('Other_') {
+                <input type="text" class="form-control" placeholder="Please specify other value">
+            }
+            @case ('ABC-Cast') {
+                <span class="text-primary">Handling ABC Cast logic here...</span>
+            }
+            @case ('DDD-Cast') {
+                <span class="text-success">Handling DDD Cast logic here...</span>
+            }
+            @default {
+                <span class="text-danger">Awaiting selection...</span>
+            }
+        }
+    </div>
+</div>
